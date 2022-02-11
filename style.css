@@ -1,0 +1,61 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:start;
+}
+
+#instructions-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-right: 7.5vw;
+    margin-left: 7.5vw
+}
+
+#grid-container {
+    width: 50vw;
+    height: 50vw;
+    display: flex; 
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0px;
+    gap: 0px;
+    box-sizing: border-box;
+}
+
+.pixel {
+    box-sizing: border-box;
+    background-color: rgb(243, 255, 239);
+    margin: 0px;
+    border: 1px solid rgb(78, 88, 75);
+}
+
+.twenty-percent {
+    background-color: rgb(180, 207, 180);
+}
+ 
+.forty-percent {
+    background-color: rgb(143, 165, 143);
+}
+
+.sixty-percent {
+    background-color: rgb(96, 112, 96);
+}
+
+.eighty-percent {
+    background-color: rgb(48, 56, 48);
+}
+
+.hundred-percent {
+    background-color: rgb(15, 17, 15);
+}
