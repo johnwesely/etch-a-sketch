@@ -13,12 +13,19 @@
 
     <div id="game-container">
         <div id="instructions-container">
-            <p>Welcome to Johnny Lightning's Sketch an Etch. Enjoy realistic gameplay without
+            <h2>Sketch N' Etch</h2>
+            <p>Welcome to Johnny Lightning's Sketch N' Etch. Enjoy realistic gameplay without
                 the hassle of those annoying knobs. Seriously, you are going to love it. Just
-                drag your mouse over the etch a sketch to play. If you want to start over, hit 
-                the reset button. 
+                drag your mouse over the etch a sketch to play. If you want to start over or 
+                pick a new canvas resolution, hit 
+                that reset button. 
             </p>
-            <button id="restart">Restart</button>
+            <div id = "range-slider">
+                <label for="side-length">Canvas Resolution:</label>
+                <input type="range" id="side-length" name="side-length"
+                    min="1" max="144">
+            </div>
+            <button id="restart">Reset</button>
         </div>
 
         <div id="grid-container"></div>

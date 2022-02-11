@@ -1,11 +1,19 @@
-populateGrid(100);
+let selectedSideLength = document.querySelector("#side-length").value;
+populateGrid(selectedSideLength);
 
-const pixels = document.querySelectorAll(".pixel");
-const pixelListeners = [];
+let pixels;
+let pixelListeners = [];
 
 initEventListeners();
 
-console.log(pixels);
+const button = document.querySelector("#restart");
+console.log(button);
+const buttonListener = button.addEventListener("click", () => {
+        console.log("button click");
+        resetGameBoard()
+    });
+
+console.log(buttonListener);
 
 
 function populateGrid(gridSideLength) {
@@ -21,14 +29,29 @@ function populateGrid(gridSideLength) {
 }
 
 function darkenPixel(selectedPixel) {
-    selectedPixel.style.backgroundColor = "black";
+    selectedPixel.style.backgroundColor = "rgb(78, 88, 75)";
 }
 
 function initEventListeners() {
+    pixels = document.querySelectorAll(".pixel");
     let i = 0;
     pixels.forEach((selectedPixel) => {
         pixelListeners[i++] = selectedPixel.addEventListener("mouseover", () => {
             darkenPixel(selectedPixel);
         });
     });
+}
+
+function resetGameBoard() {
+    deleteAllChildren(document.querySelector("#grid-container"));
+    selectedSideLength = document.querySelector("#side-length").value;
+    console.log(selectedSideLength);
+    populateGrid(selectedSideLength);
+    initEventListeners();
+}
+
+function deleteAllChildren(parentElement) {
+    while (parentElement.firstChild) {
+        parentElement.removeChild(parentElement.firstChild);
+    }
 }
